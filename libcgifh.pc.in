@@ -1,0 +1,10 @@
+prefix=SED_PREFIX
+exec_prefix=${prefix}
+libdir=${exec_prefix}/SED_LIBDIR
+includedir=${prefix}/SED_INCLUDEDIR
+
+Name: libcgifh
+Description: Helper for making diagrams with CGIF
+Version: SED_VERSION
+Libs: -L${libdir} -lcgifh
+Cflags: -I${includedir}
