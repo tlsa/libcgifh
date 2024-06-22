@@ -1,6 +1,8 @@
 CGIF Helper
 ===========
 
+[![Build Status](https://github.com/tlsa/libcgifh/workflows/CI/badge.svg)](https://github.com/tlsa/libcyaml/actions)
+
 LibCGIFH is a simple C library containing some helper routines designed to make
 it easy to create animated diagrams with [CGIF](https://github.com/dloebl/cgif).
 
