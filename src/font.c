@@ -14,7 +14,7 @@
 /**
  * Bitmap font data.
  */
-const cgifh_glyph_t font_h8['~'] = {
+const cgifh_glyph_t font_h8[CGIFH_GLYPH_COUNT] = {
 	['a'] = {
 		.advance = 5,
 		.data = {
