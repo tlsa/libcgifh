@@ -173,6 +173,18 @@ static inline cgifh_pixel_fn cgifh_get_px_fn(
 	int clip_x1 = img->width;
 	int clip_y1 = img->height;
 
+	if (test_x0 > test_x1) {
+		int tmp = test_x0;
+		test_x0 = test_x1;
+		test_x1 = tmp;
+	}
+
+	if (test_y0 > test_y1) {
+		int tmp = test_y0;
+		test_y0 = test_y1;
+		test_y1 = tmp;
+	}
+
 	if (test_x0 >= clip_x0 &&
 	    test_x1 <  clip_x1 &&
 	    test_y0 >= clip_y0 &&
