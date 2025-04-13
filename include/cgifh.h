@@ -150,6 +150,22 @@ void cgifh_rect_fill(
 		int w, int h);
 
 /**
+ * Draw a filled ellipse.
+ *
+ * \param[in] img    The image to draw an ellipse in.
+ * \param[in] colour The palette index of the colour to fill the ellipse with.
+ * \param[in] x      The x coordinate of top left corner of ellipse bounding rect.
+ * \param[in] y      The y coordinate of top left corner of ellipse bounding rect.
+ * \param[in] w      The width of the ellipse.
+ * \param[in] h      The height of the ellipse.
+ */
+void cgifh_ellipse_fill(
+		cgifh_t *img,
+		uint8_t colour,
+		int x, int y,
+		int x1, int y1);
+
+/**
  * Draw a character at a given position.
  *
  * \param[in] img       Image to draw on.
