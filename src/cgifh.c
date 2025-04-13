@@ -311,6 +311,40 @@ void cgifh_rect_fill(
 	}
 }
 
+/* Exported function, documented in cgifh.h */
+void cgifh_ellipse_fill(
+		cgifh_t *img,
+		uint8_t colour,
+		int x, int y,
+		int w, int h)
+{
+	cgifh_pixel_fn px = cgifh_get_px_fn(img, x, y, x + w, y + h);
+	int64_t w2 = (int64_t)w * (int64_t)w;
+	int64_t h2 = (int64_t)h * (int64_t)h;
+
+	if (px == NULL) {
+		return;
+	}
+
+	x += w / 2;
+	y += h / 2;
+
+	for (int i = 0; i < h; i += 2) {
+		int64_t i2 = (int64_t)i * (int64_t)i;
+
+		for (int j = 0; j < w; j += 2) {
+			int64_t j2 = (int64_t)j * (int64_t)j;
+
+			if ((i2 * w2 + j2 * h2) <= (w2 * h2)) {
+				px(img, colour, x - j / 2, y - i / 2);
+				px(img, colour, x + j / 2, y - i / 2);
+				px(img, colour, x - j / 2, y + i / 2);
+				px(img, colour, x + j / 2, y + i / 2);
+			}
+		}
+	}
+}
+
 /**
  * Get the glyph for a character.
  *
